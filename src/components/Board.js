@@ -13,7 +13,7 @@ const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit }) => {
         const today = moment().format("YYYY-MM-DD");
         const wodDay = moment(wod.scheduled_date).format("YYYY-MM-DD");
         if (today === wodDay) return (
-            <Button userId={user.id} results={wod.results} onResultSubmit={onResultSubmit} /> 
+            <Button userId={user.id} results={wod.results} wodId={wod.id} onResultSubmit={onResultSubmit} /> 
         )
     }
 

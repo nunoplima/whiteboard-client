@@ -51,7 +51,7 @@ class App extends React.Component {
         })
     };
 
-    handleResultSubmit = async (result) => {
+    handleResultSubmit = async (wodId, result) => {
         console.log(result);
         const { token } = this.state;
         await submitResult(result, token);
@@ -59,7 +59,7 @@ class App extends React.Component {
 
     render() {
         const { user, wods, currentIndex, isLoading } = this.state;
-        console.log(user);
+        console.log(this.state.token);
         return (
             <div className="App container">
                

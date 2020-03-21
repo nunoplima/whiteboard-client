@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-const Button = ({ userId, results, onResultSubmit }) => {
+const Button = ({ userId, results, wodId, onResultSubmit }) => {
     const [result, setResult] = useState("");
     
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        onResultSubmit(result);
+        onResultSubmit(wodId, result);
     };
 
     const handleOnChange = (e) => {
