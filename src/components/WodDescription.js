@@ -6,9 +6,9 @@ const WodDescription = ({ wod }) => {
     );
     
     return (
-        <>
+        <div className="wodDescription">
             {renderWod()}
-        </>
+        </div>
     )
 };
 

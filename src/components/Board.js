@@ -5,6 +5,7 @@ import WodDate from "./WodDate";
 import WodDescription from "./WodDescription";
 import WodResults from "./WodResults";
 import Button from "./Button";
+import "./Board.css";
 
 const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit }) => {
     
@@ -12,14 +13,15 @@ const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit }) => {
         const wod = wods[currentIndex];
         const today = moment().format("YYYY-MM-DD");
         const wodDay = moment(wod.scheduled_date).format("YYYY-MM-DD");
-        if (today === wodDay) return (
+        const isLast = currentIndex === 0;
+        if (today === wodDay || isLast) return (
             <Button userId={user.id} results={wod.results} wodId={wod.id} onResultSubmit={onResultSubmit} /> 
         )
     }
 
     return (
         <>
-            <h1>private route {user.username}</h1>
+            {/* <h1>private route {user.username}</h1> */}
             
             <WodDate
                 wods={wods}
@@ -28,10 +30,17 @@ const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit }) => {
                 isFirst={currentIndex === wods.length - 1}
                 onDateChange={onDateChange}
             />
+            
+            <div className="wodAndResultsContainer">
+    
+                <WodDescription wod={wods[currentIndex]} />
 
-            <WodDescription wod={wods[currentIndex]} />
+                {/* <hr /> */}
+    
+                <WodResults userId={user.id} wod={wods[currentIndex]} />
+    
+            </div>
 
-            <WodResults userId={user.id} wod={wods[currentIndex]} />
 
             {renderButton()}
 

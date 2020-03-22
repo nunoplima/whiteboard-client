@@ -1,11 +1,14 @@
 import React from "react";
 import { withRouter, Switch, Route, Redirect } from "react-router-dom";
 import { getUser, getToken } from "./util/tokenHelper";
-import { getWodsAndResults, submitResult } from "./util/wodsAndResultsHelper";
+import { getWodsAndResults } from "./util/wodsAndResultsHelper";
+import io from "socket.io-client";
+import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Board from "./components/Board";
-import { TOMORROW, YESTERDAY } from "./constants/constants";
-
+import { TOMORROW, YESTERDAY, ADD } from "./constants/constants";
+import dotenv from "dotenv";
+dotenv.config();
 
 class App extends React.Component {
     state = {
@@ -13,6 +16,7 @@ class App extends React.Component {
         token: "",
         wods: [],
         currentIndex: 0,
+        socket: {},
         isLoading: true,
     };
 
@@ -20,14 +24,49 @@ class App extends React.Component {
         this.setState({ isLoading: true }, async () => {
             const storedToken = localStorage.getItem("token");
             if (storedToken) {
-                // get workouts
+                // add event listeneres to socket (if a new result has been submitted or edited)
+                const socket = io(process.env.REACT_APP_API_URL);
+                socket.on("add to results", payload => this.addResultToState(payload));
+                socket.on("edit results", payload => this.updateResultInState(payload));
+                // get user, token and workouts
                 const [{ user, token }, { wods }] = await Promise.all([getUser(storedToken), getWodsAndResults(storedToken)]);
-                this.setState({ user, token, wods, isLoading: false });
+                this.setState({ user, token, wods, socket, isLoading: false });
             } else {
                 this.setState({ isLoading: false });
             }
         });
     }
+
+    addResultToState = ({ wodId, result }) => {
+        this.setState((prevState) => {
+            const updatedWods = prevState.wods.map(wod => {
+                if (wod.id === wodId) {
+                    const updatedResults = [...wod.results, result];
+                    return { ...wod, results: updatedResults };
+                }
+                return wod;
+            });
+
+            return { ...prevState, wods: updatedWods };
+        });        
+    };
+
+    updateResultInState = ({ wodId, userId, result}) => {
+        this.setState((prevState) => {
+            const updatedWods = prevState.wods.map(wod => {
+                if (wod.id === wodId) {
+                    const updatedResults = wod.results.map(element => {
+                        if (element.user_id === userId) return result;
+                        return element;
+                    })
+                    return { ...wod, results: updatedResults }
+                }
+                return wod;
+            });
+
+            return { ...prevState, wods: updatedWods };
+        });
+    };
 
     handleResponseFacebook = (response) => {
         this.setState({ isLoading: true }, async () => {
@@ -51,17 +90,19 @@ class App extends React.Component {
         })
     };
 
-    handleResultSubmit = async (wodId, result) => {
-        console.log(result);
-        const { token } = this.state;
-        await submitResult(result, token);
+    handleResultSubmit = async (wodId, result, method) => {
+        const { user, socket } = this.state;
+        const event = method === ADD ? "add result" : "edit result";
+        socket.emit(event, { result, wod_id: wodId, user_id: user.id });
     };
 
     render() {
         const { user, wods, currentIndex, isLoading } = this.state;
-        console.log(this.state.token);
+        console.log(wods);
         return (
-            <div className="App container">
+            <div>
+                
+                <Navbar user={user}/>
                
                 {isLoading ? (
                         <h1>Loading...</h1>

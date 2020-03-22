@@ -16,8 +16,4 @@ const getWodsAndResults = async (token) => {
     }
 };
 
-const submitResult = async (token, result) => {
-
-};
-
-export { getWodsAndResults, submitResult }
+export { getWodsAndResults }

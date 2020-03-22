@@ -1,5 +1,7 @@
 export const YESTERDAY = "yesterday";
 export const TOMORROW = "tomorrow";
+export const EDIT = "EDIT";
+export const ADD = "ADD";
 
 export const scoreObj = {
     "time": "mins",
@@ -9,4 +11,11 @@ export const scoreObj = {
     "other": "",
 };
 
+export const scoreOrderObj = {
+    "time": "asc",
+    "rounds": "desc",
+    "reps": "desc",
+    "load": "desc",
+    "other": "asc",
+}
 
