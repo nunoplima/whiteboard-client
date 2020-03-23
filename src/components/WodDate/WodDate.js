@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { TOMORROW, YESTERDAY } from "../constants/constants";
+import { TOMORROW, YESTERDAY } from "../../constants/constants";
 import "./WodDate.css";
 
 const WodDate = ({ wods, date, isFirst, isLast, onDateChange }) => {

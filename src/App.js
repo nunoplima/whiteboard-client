@@ -3,9 +3,10 @@ import { withRouter, Switch, Route, Redirect } from "react-router-dom";
 import { getUser, getToken } from "./util/tokenHelper";
 import { getWodsAndResults } from "./util/wodsAndResultsHelper";
 import io from "socket.io-client";
-import Navbar from "./components/Navbar";
-import Login from "./components/Login";
-import Board from "./components/Board";
+import Navbar from "./components/Navbar/Navbar";
+import Login from "./components/Login/Login";
+import Board from "./components/Board/Board";
+import VideoModal from "./components/VideoModal/VideoModal";
 import { TOMORROW, YESTERDAY, ADD } from "./constants/constants";
 import dotenv from "dotenv";
 dotenv.config();
@@ -17,6 +18,7 @@ class App extends React.Component {
         wods: [],
         currentIndex: 0,
         socket: {},
+        isModalVisible: false,
         isLoading: true,
     };
 
@@ -96,8 +98,10 @@ class App extends React.Component {
         socket.emit(event, { result, wod_id: wodId, user_id: user.id });
     };
 
+    handleModalVisibility = bool => this.setState({ isModalVisible: bool });
+    
     render() {
-        const { user, wods, currentIndex, isLoading } = this.state;
+        const { user, wods, currentIndex, isModalVisible, isLoading } = this.state;
         console.log(wods);
         return (
             <div>
@@ -119,12 +123,21 @@ class App extends React.Component {
                                     wods={wods} 
                                     currentIndex={currentIndex} 
                                     onDateChange={this.handleDateChange}
-                                    onResultSubmit={this.handleResultSubmit} />
+                                    onResultSubmit={this.handleResultSubmit} 
+                                    setModalVisibility={this.handleModalVisibility} />
                                 } />
                         
                         </Switch>
                     )
                 }
+
+                {isModalVisible && (
+                    <VideoModal
+                        isModalVisible={isModalVisible}
+                        setModalVisibility={this.handleModalVisibility}
+                        videoUrl={wods[currentIndex].video_url}
+                    />
+                )}
 
             </div>
         );

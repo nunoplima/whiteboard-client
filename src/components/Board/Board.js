@@ -1,13 +1,13 @@
 import React from "react";
-import requireAuth from "../hoc/requiresAuth";
+import requireAuth from "../../hoc/requiresAuth";
 import moment from "moment";
-import WodDate from "./WodDate";
-import WodDescription from "./WodDescription";
-import WodResults from "./WodResults";
-import Button from "./Button";
+import WodDate from "../WodDate/WodDate";
+import WodDescription from "../WodDescription/WodDescription";
+import WodResults from "../WodResults/WodResults";
+import Button from "../Button/Button";
 import "./Board.css";
 
-const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit }) => {
+const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit, setModalVisibility }) => {
     
     const renderButton = () => {
         const wod = wods[currentIndex];
@@ -33,7 +33,7 @@ const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit }) => {
             
             <div className="wodAndResultsContainer">
     
-                <WodDescription wod={wods[currentIndex]} />
+                <WodDescription wod={wods[currentIndex]} setModalVisibility={setModalVisibility} />
 
                 {/* <hr /> */}
     

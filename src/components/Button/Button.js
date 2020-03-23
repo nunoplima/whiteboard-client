@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ADD, EDIT } from "../constants/constants";
+import { ADD, EDIT } from "../../constants/constants";
 import "./Button.css";
 
 const Button = ({ userId, results, wodId, onResultSubmit }) => {

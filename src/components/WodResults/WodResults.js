@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
-import { scoreObj, scoreOrderObj } from "../constants/constants";
+import { scoreObj, scoreOrderObj } from "../../constants/constants";
 import "./WodResults.css";
 
 

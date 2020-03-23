@@ -1,0 +1,57 @@
+.wodDescriptionContainer {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    margin-top: 10px;
+}
+
+.mockDiv {
+    flex: 1;
+}
+
+.wodDescription {
+    width: 50%;
+    text-align: center;
+    justify-content: flex-end;
+}
+
+.wodDescriptionContainer > p {
+    width: 25%;
+    color: #fff;
+}
+
+.videoLinkDiv {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 22px;
+}
+
+.videoIcon {
+    font-size: 26px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.videoLinkDiv > p {
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+    margin: 0;
+}
+
+.videoLinkDiv:hover {
+    color: #7b7b7b;
+}
+
+.wodDescription > p {
+    text-align: center;
+    margin: 1px;
+    font-size: 24px;
+}
+
+.wodDescription > p:first-child {
+    font-weight: bolder;
+    font-size: 32px;
+}
