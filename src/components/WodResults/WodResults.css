@@ -36,13 +36,14 @@
 
 #resultsTable {
     margin-top: 10px;
-    /* max-height: 80%;
-    overflow-y: scroll; */
+    /* max-height: 80%; */
+    overflow-y: scroll;
+    margin-bottom: 20px;
 }
 
 /* Scroll bar */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -50,7 +51,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: "transparent";
+    background: #a1a1a1;
 }
 
 ::-webkit-scrollbar-thumb:hover {
