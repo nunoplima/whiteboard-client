@@ -19,13 +19,15 @@ const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit, setModa
         )
     }
 
+    const wod = wods[currentIndex];
+
     return (
         <>
             {/* <h1>private route {user.username}</h1> */}
             
             <WodDate
                 wods={wods}
-                date={wods[currentIndex].scheduled_date}
+                date={wod.scheduled_date}
                 isLast={currentIndex === 0}
                 isFirst={currentIndex === wods.length - 1}
                 onDateChange={onDateChange}
@@ -33,11 +35,11 @@ const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit, setModa
             
             <div className="wodAndResultsContainer">
     
-                <WodDescription wod={wods[currentIndex]} setModalVisibility={setModalVisibility} />
+                <WodDescription wod={wod} setModalVisibility={setModalVisibility} />
 
                 {/* <hr /> */}
     
-                <WodResults userId={user.id} wod={wods[currentIndex]} />
+                <WodResults userId={user.id} wod={wod} />
     
             </div>
 
