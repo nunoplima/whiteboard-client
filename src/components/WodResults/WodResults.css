@@ -34,55 +34,6 @@
 
 /* table */
 
-#resultsTable {
-    margin-top: 10px;
-    overflow-y: scroll;
-    margin-bottom: 20px;
-}
-
-/* Scroll bar */
-::-webkit-scrollbar {
-    width: 5px;
-}
-
-::-webkit-scrollbar-track {
-    background: "transparent";
-}
-
-::-webkit-scrollbar-thumb {
-    background: #a1a1a1;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #7b7b7b;
-}
-
-.table thead th {
-    /* border-bottom: none!important; */
-}
-
-table {
-    margin: 0 auto;
-    width: 70%;
-    padding-bottom: 10px;
-}
-
-th {
-    text-align: center;
-    color: #fff;  
-    font-weight: bolder;
-}
-
-td {
-    color: #fff;
-    text-align: center;
-    padding: 2px;
-}
-
-td:last-child {
-    text-align: end;
-}
-
 #athlete {
     padding: 10px;
     width: 30%;

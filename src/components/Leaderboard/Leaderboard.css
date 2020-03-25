@@ -1,0 +1,19 @@
+.leaderboardTitle {
+    margin: 0 auto;
+    padding: 0;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+#leaderboardTable {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.crownIcn {
+    padding-left: 5px;
+}

@@ -9,9 +9,10 @@ const Navbar = ({ user }) => {
         <div className={"navbarContainer"}>
             <img className={"logo"} src={Logo} alt={"Logo"} />
             <ul className={"navbarLinks"}>
-                <li><Link className="navbarLink">Leaderboard</Link></li>
+                <li><Link className="navbarLink" to="/leaderboard">Leaderboard</Link></li>
+                {Object.keys(user).length ? <li><Link className="navbarLink" to="/board">Wods</Link></li> : null}
                 {Object.keys(user).length ? <li>Logout</li> : null}
-                <li>Contact</li>
+                {/* <li>Contact</li> */}
             </ul>
         </div>
     )
