@@ -16,4 +16,14 @@ const getWodsAndResults = async (token) => {
     }
 };
 
-export { getWodsAndResults }
+const getLeaderboard = async () => {
+    try {
+        const rawResponse = await fetch(`${process.env.REACT_APP_API_URL}/leaderboard`);
+        const response = await rawResponse.json();
+        return response;
+    } catch(e) {
+        console.log(e);
+    }
+}
+
+export { getWodsAndResults, getLeaderboard };

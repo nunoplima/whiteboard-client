@@ -33,7 +33,7 @@ const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit, setModa
                 onDateChange={onDateChange}
             />
             
-            <div className="wodAndResultsContainer">
+            <div className="tableContainer">
     
                 <WodDescription wod={wod} setModalVisibility={setModalVisibility} />
 

@@ -1,11 +1,12 @@
 import React from "react";
 import { withRouter, Switch, Route, Redirect } from "react-router-dom";
 import { getUser, getToken } from "./util/tokenHelper";
-import { getWodsAndResults } from "./util/wodsAndResultsHelper";
+import { getWodsAndResults, getLeaderboard } from "./util/wodsAndResultsHelper";
 import io from "socket.io-client";
 import Navbar from "./components/Navbar/Navbar";
 import Login from "./components/Login/Login";
 import Board from "./components/Board/Board";
+import Leaderboard from "./components/Leaderboard/Leaderboard";
 import VideoModal from "./components/VideoModal/VideoModal";
 import { TOMORROW, YESTERDAY, ADD } from "./constants/constants";
 import dotenv from "dotenv";
@@ -13,6 +14,7 @@ dotenv.config();
 
 class App extends React.Component {
     state = {
+        leaderboard: [],
         user: {},
         token: "",
         wods: [],
@@ -31,10 +33,11 @@ class App extends React.Component {
                 socket.on("add to results", payload => this.addResultToState(payload));
                 socket.on("edit results", payload => this.updateResultInState(payload));
                 // get user, token and workouts
-                const [{ user, token }, { wods }] = await Promise.all([getUser(storedToken), getWodsAndResults(storedToken)]);
-                this.setState({ user, token, wods, socket, isLoading: false });
+                const [{ leaderboard }, { user, token }, { wods }] = await Promise.all([getLeaderboard(), getUser(storedToken), getWodsAndResults(storedToken)]);
+                this.setState({ leaderboard, user, token, wods, socket, isLoading: false });
             } else {
-                this.setState({ isLoading: false });
+                const leaderboard = await getLeaderboard();
+                this.setState({ leaderboard, isLoading: false });
             }
         });
     }
@@ -101,8 +104,8 @@ class App extends React.Component {
     handleModalVisibility = bool => this.setState({ isModalVisible: bool });
     
     render() {
-        const { user, wods, currentIndex, isModalVisible, isLoading } = this.state;
-        console.log(wods);
+        const { leaderboard, user, wods, currentIndex, isModalVisible, isLoading } = this.state;
+        console.log(leaderboard);
         return (
             <div>
                 
@@ -117,7 +120,8 @@ class App extends React.Component {
 
                             <Route exact path="/login" render={() => <Login onResponseFacebook={this.handleResponseFacebook}/> } />
                             
-                            <Route path="/board" 
+                            <Route exact 
+                                path="/board" 
                                 render={() => <Board 
                                     user={user} 
                                     wods={wods} 
@@ -126,6 +130,11 @@ class App extends React.Component {
                                     onResultSubmit={this.handleResultSubmit} 
                                     setModalVisibility={this.handleModalVisibility} />
                                 } />
+                            
+                            <Route exact 
+                                path="/leaderboard" 
+                                render={() => <Leaderboard userId={user.id} leaderboard={leaderboard} />}
+                                />
                         
                         </Switch>
                     )
