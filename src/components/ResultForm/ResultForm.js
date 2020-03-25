@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { ADD, EDIT } from "../../constants/constants";
-import "./Button.css";
+import "./ResultForm.css";
 
-const Button = ({ userId, results, wodId, onResultSubmit }) => {
+const ResultForm = ({ userId, results, wodId, onResultSubmit }) => {
     const [result, setResult] = useState("");
     
     const handleOnSubmit = (e) => {
         e.preventDefault();
         const method = userResult() ? EDIT : ADD;
         onResultSubmit(wodId, result, method);
+        setResult("");
     };
 
     const handleOnChange = (e) => {
@@ -35,4 +36,4 @@ const Button = ({ userId, results, wodId, onResultSubmit }) => {
     )
 };
 
-export default Button;
+export default ResultForm;
