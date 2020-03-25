@@ -11,7 +11,7 @@
 .logo {
     width: 250px;
     margin-left: -40px;
-
+    cursor: pointer;
 }
 
 .navbarLinks {
@@ -41,6 +41,10 @@
 .navbarLink:hover {
     color: #7b7b7b;
     text-decoration: none;
+}
+
+.isActive {
+    color: #7b7b7b;
 }
 
 .navbarLinks li:last-child {
