@@ -31,7 +31,7 @@ class App extends React.Component {
             if (storedToken) {
                 // add event listeneres to socket (if a new result has been submitted or edited)
                 const socket = io(process.env.REACT_APP_API_URL);
-                socket.on("add to results", payload => this.addResultToState(payload));
+                socket.on("add to results", payload => this.updateResultInState(payload));
                 socket.on("edit results", payload => this.updateResultInState(payload));
                 // get leaderboard, user, token and workouts
                 const [{ leaderboard }, { user, token }, { wods }] = await Promise.all([getLeaderboard(), getUser(storedToken), getWodsAndResults(storedToken)]);
@@ -43,29 +43,12 @@ class App extends React.Component {
         });
     }
 
-    addResultToState = ({ wodId, result }) => {
+    updateResultInState = ({ wodId, results}) => {
         this.setState((prevState) => {
             const updatedWods = prevState.wods.map(wod => {
                 if (wod.id === wodId) {
-                    const updatedResults = [...wod.results, result];
-                    return { ...wod, results: updatedResults };
-                }
-                return wod;
-            });
-
-            return { ...prevState, wods: updatedWods };
-        });        
-    };
-
-    updateResultInState = ({ wodId, userId, result}) => {
-        this.setState((prevState) => {
-            const updatedWods = prevState.wods.map(wod => {
-                if (wod.id === wodId) {
-                    const updatedResults = wod.results.map(element => {
-                        if (element.user_id === userId) return result;
-                        return element;
-                    })
-                    return { ...wod, results: updatedResults }
+                    return { ...wod, results }
+                    
                 }
                 return wod;
             });
@@ -81,7 +64,11 @@ class App extends React.Component {
             localStorage.setItem("token", token);
             // get workouts
             const { wods } = await getWodsAndResults(token);
-            this.setState({ user, token, wods, isLoading: false }, 
+            // add event listeneres to socket (if a new result has been submitted or edited)
+            const socket = io(process.env.REACT_APP_API_URL);
+            socket.on("add to results", payload => this.updateResultInState(payload));
+            socket.on("edit results", payload => this.updateResultInState(payload));
+            this.setState({ user, token, wods, socket, isLoading: false }, 
                 () => this.props.history.push("/"));
         });
     };

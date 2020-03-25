@@ -16,6 +16,6 @@ export const scoreOrderObj = {
     "rounds": "desc",
     "reps": "desc",
     "load": "desc",
-    "other": "asc",
+    "other": "desc",
 }
 
