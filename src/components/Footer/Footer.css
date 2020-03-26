@@ -18,3 +18,12 @@
 .hashtags {
     margin: 0 5px;
 }
+
+#privacyPolicyLink {
+    color: #fff;
+}
+
+#privacyPolicyLink:hover {
+    text-decoration: none;
+    color: #7b7b7b;
+}
