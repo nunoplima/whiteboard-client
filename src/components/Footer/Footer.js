@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css";
@@ -12,7 +13,7 @@ const Footer = () => {
                 </span>
                 in Lisbon
                 <span className="hashtags">
-                    #staysafe #stayhome
+                    #staysafe #stayhome | <Link id="privacyPolicyLink" to="/privacy-policy">Privacy Policy</Link>
                 </span>
             </p>
         </div>

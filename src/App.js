@@ -9,6 +9,7 @@ import Login from "./components/Login/Login";
 import Board from "./components/Board/Board";
 import Leaderboard from "./components/Leaderboard/Leaderboard";
 import VideoModal from "./components/VideoModal/VideoModal";
+import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import { TOMORROW, YESTERDAY, ADD } from "./constants/constants";
 import dotenv from "dotenv";
 dotenv.config();
@@ -138,6 +139,8 @@ class App extends React.Component {
                                 path="/leaderboard" 
                                 render={() => <Leaderboard userId={user.id} leaderboard={leaderboard} />}
                                 />
+
+                            <Route exact path="/privacy-policy" component={PrivacyPolicy} />
                         
                         </Switch>
                     )
