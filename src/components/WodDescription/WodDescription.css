@@ -55,3 +55,16 @@
     font-weight: bolder;
     font-size: 32px;
 }
+
+/* media queries */
+@media screen and (max-width: 1500px) {
+    .wodDescriptionContainer {
+        width: 80vw!important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .wodDescriptionContainer {
+        width: 90vw!important;
+    }
+}

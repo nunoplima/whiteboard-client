@@ -39,10 +39,7 @@ body {
     height: 100%;
 }
 
-/* tables */
-
 /* table */
-
 #resultsTable,
 #leaderboardTable {
     margin-top: 10px;
@@ -100,4 +97,22 @@ td {
     align-items: center;
     height: 60vh;
     margin-top: 5px;
+}
+
+@media screen and (max-width: 775px) {
+    body {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    body {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    body {
+        font-size: 20px;
+    }
 }

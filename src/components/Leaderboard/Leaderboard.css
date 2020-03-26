@@ -10,6 +10,7 @@
 }
 
 #leaderboardTable {
+    max-width: 70%;
     margin-top: 25px;
     margin-bottom: 25px;
 }
@@ -17,4 +18,104 @@
 .crownIcn {
     font-size: 24px;
     padding-left: 5px;
+}
+
+/* media queries */
+@media screen and (max-width: 1500px) {
+    #leaderboardTable {
+        max-width: 80vw!important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #leaderboardTable {
+        max-width: 90vw!important;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .leaderboardTitle {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #leaderboardTable {
+        max-width: 95vw!important;
+    }
+
+    .leaderboardTitle {
+        font-size: 38px;
+    }
+
+    .crownIcn {
+        font-size: 20px;
+        padding-left: 5px;
+    }
+
+}
+
+@media screen and (max-width: 530px) {
+    #leaderboardTable {
+        max-width: 100vw!important;
+        padding: 0 10px;
+    }
+
+    td {
+        padding: 4px;
+    }
+
+    .crownIcn {
+        font-size: 18px;
+        padding-left: 3px;
+        padding-bottom: 3px;
+    }
+
+    #leaderboardPosition {
+        width: 2%;
+    }
+
+    #leaderBoardAthlete {
+        width: 35%;
+    }
+}
+
+
+@media screen and (max-width: 460px) {
+    #leaderboardTable {
+        max-width: 100vw!important;
+        padding: 0 10px;
+    }
+
+    td {
+        padding: 3px;
+    }
+
+    th {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .crownIcn {
+        font-size: 16px;
+        padding-left: 3px;
+        padding-bottom: 3px;
+    }
+
+    #leaderboardPosition {
+        width: 1%;
+    }
+
+    #leaderboardAthlete {
+        width: 40%;
+    }
+
+
+    #leaderboardScore {
+        width: 30px;    
+    }
+
+    .leaderboardWods {
+        display: none;
+    }
 }

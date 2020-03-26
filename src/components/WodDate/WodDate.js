@@ -22,7 +22,7 @@ const WodDate = ({ wods, date, isFirst, isLast, onDateChange }) => {
                 <FontAwesomeIcon icon={faChevronLeft}/>
             </div>
             
-            <div>WOD {moment(date).format("DD/MM")}</div>
+            <div id="wodDate">WOD {moment(date).format("DD/MM")}</div>
             
             <div id="rightArrow" className={isLast ? "arrow inactive" : "arrow"} onClick={!isLast ? handleDateChange : null}>
                 <FontAwesomeIcon icon={faChevronRight}/>

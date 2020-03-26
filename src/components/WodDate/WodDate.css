@@ -17,9 +17,27 @@
 .arrow {
     cursor: pointer;
     font-size: 30px;
-    padding: 15px;
+    padding: 0 15px;
 }
 
 .arrow:hover {
     color: #7b7b7b;
+}
+
+/* media queries */
+@media screen and (max-width: 775px) {
+    #wodDate {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #wodDate {
+        font-size: 38px;
+    }
+
+    .arrow {
+        font-size: 24px;
+        padding: 0 10px;
+    }
 }

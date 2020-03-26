@@ -22,7 +22,7 @@ const Leaderboard = ({ userId, leaderboard }) => {
                     <td>{el[1][1] || "-"}</td>
                     <td>{el[1][2] || "-"}</td>
                     <td>{el[1][3] || "-"}</td>
-                    <td>{el[1].completed}</td>
+                    <td className="leaderboardWods">{el[1].completed}</td>
                 </tr>
             ))       
     );
@@ -38,9 +38,9 @@ const Leaderboard = ({ userId, leaderboard }) => {
                     <table className="table table-sm">
                         <thead>
                             <tr>
-                                <th scope="col" id="position">#</th>
-                                <th scope="col" id="athlete">Athlete</th>
-                                <th scope="col" id="score">
+                                <th scope="col" id="leaderboardPosition">#</th>
+                                <th scope="col" id="leaderboardAthlete">Athlete</th>
+                                <th scope="col" id="leaderboardScore">
                                     <div className="scoreType">
                                         Points
                                         <div id="sortOrder">
@@ -63,7 +63,7 @@ const Leaderboard = ({ userId, leaderboard }) => {
                                 <th scope="col">1st's</th>
                                 <th scope="col">2nd's</th>
                                 <th scope="col">3rd's</th>
-                                <th scope="col">Wods</th>
+                                <th scope="col" className="leaderboardWods">Wods</th>
                             </tr>
                         </thead>
 
