@@ -1,6 +1,6 @@
 .navbarContainer {
     width: 70%;
-    height: auto;   
+    height: auto;
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -30,7 +30,7 @@
 }
 
 .navbarLinks > li:hover {
-    color: #7b7b7b; 
+    color: #7b7b7b;
 }
 
 .navbarLink {
@@ -103,7 +103,6 @@
         font-size: 20px;
     }
 }
-
 
 @media screen and (max-width: 530px) {
     .logo {

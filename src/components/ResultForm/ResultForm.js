@@ -4,7 +4,7 @@ import "./ResultForm.css";
 
 const ResultForm = ({ userId, results, wodId, onResultSubmit }) => {
     const [result, setResult] = useState("");
-    
+
     const handleOnSubmit = (e) => {
         e.preventDefault();
         const method = userResult() ? EDIT : ADD;
@@ -19,11 +19,28 @@ const ResultForm = ({ userId, results, wodId, onResultSubmit }) => {
     const userResult = () => (
         results.find(result => result.user_id === userId)
     );
+
+    // https://stackoverflow.com/a/9039885/3973320
+    const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    const handleFocus = () => {
+        if (!iOS) {
+            window.scrollTo(0, document.body.scrollHeight); 
+        }
+    };
     
+    const handleBlur = () => {
+        if (!iOS) {
+            window.scrollTo(0, 0); 
+        }
+    };
+
     return (
         <form onSubmit={handleOnSubmit}>
             <input className="result"
                 autoFocus
+                onFocus={handleFocus} 
+                onBlur={handleBlur} 
                 onChange={handleOnChange} 
                 type="number"
                 step={"any"}

@@ -1,0 +1,42 @@
+.spinnerCointainer {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: -100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinnerCointainer > h1 {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+#spinner {
+    height: 50px;
+    width: 50px;
+}
+
+@media screen and (max-width: 775px) {
+    .spinnerCointainer > h1 {
+        font-size: 38px;
+    }
+
+    #spinner {
+        height: 45px;
+        width: 45px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .spinnerCointainer > h1 {
+        font-size: 30px;
+    }
+
+    #spinner {
+        height: 38px;
+        width: 38px;
+    }
+
+}
