@@ -111,7 +111,7 @@ class App extends React.Component {
         const { leaderboard, user, wods, currentIndex, isModalVisible, isLoading } = this.state;
 
         return (
-            <div>
+            <div className="App">
                 
                 <Navbar user={user} onLogout={this.handleLogout} />
                
@@ -146,7 +146,7 @@ class App extends React.Component {
                     )
                 }
 
-                <Footer />
+                {/* <Footer /> */}
 
                 {isModalVisible && (
                     <VideoModal

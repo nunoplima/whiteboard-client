@@ -53,3 +53,29 @@ input[type=number]::-webkit-inner-spin-button {
 .submit:hover {
     transform: scale3d(1.05, 1.05, 1.05);
 }
+
+/* media queries */
+@media screen and (max-width: 775px) {
+    .result {
+        font-size: 24px;
+    }
+
+    .submit {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .result {
+        font-size: 22px;
+        padding: 3px;
+    }
+
+    .submit {
+        font-size: 22px;
+        padding: 3px 15px;
+        margin-left: 5px;
+    }
+
+
+}

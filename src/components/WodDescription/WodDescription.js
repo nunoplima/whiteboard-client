@@ -25,7 +25,7 @@ const WodDescription = ({ wod, setModalVisibility }) => {
                                 style={{ fontSize: "20px" }}
                             />
                         </div>
-                        <p onClick={() => setModalVisibility(true)}>Explanation video</p>
+                        <p onClick={() => setModalVisibility(true)}>Demo video</p>
                     </>
                 ) : null}
             </div>

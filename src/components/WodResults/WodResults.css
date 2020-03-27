@@ -1,6 +1,8 @@
 #resultsTable {
     margin-left: 0;
     margin-right: 0;
+    max-width: 70%;
+    padding: 0;
 }
 
 #sortOrder {
@@ -14,6 +16,10 @@
 
 #sortOrder:hover {
     color: #7b7b7b;
+}
+
+#score {
+    padding: 10px;
 }
 
 .font-awesome-icons-div {
@@ -85,8 +91,12 @@
     #resultsTable {
         max-width: 95vw!important;
     }
+}
 
-    
+@media screen and (max-width: 500px) {
+    #isEdited {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 460px) {
@@ -99,4 +109,11 @@
         margin-left: 5px;
     }
 
+    #athlete {
+        width: 40%;
+    }
+
+    #position {
+        width: 5%;
+    }
 }

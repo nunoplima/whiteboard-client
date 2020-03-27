@@ -41,3 +41,15 @@
         padding: 0 10px;
     }
 }
+
+@media screen and (max-width: 460px) {
+    #wodDate {
+        font-size: 34px;
+    }
+
+    .arrow {
+        font-size: 22px;
+        padding: 0 10px;
+    }
+
+}

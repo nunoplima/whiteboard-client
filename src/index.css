@@ -39,6 +39,10 @@ body {
     height: 100%;
 }
 
+.App {
+    height: 96vh;
+}
+
 /* table */
 #resultsTable,
 #leaderboardTable {
