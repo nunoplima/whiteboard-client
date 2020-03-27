@@ -6,7 +6,7 @@
 }
 
 .mockDiv {
-    flex: 1;
+    width: 25%;
 }
 
 .wodDescription {
@@ -54,4 +54,66 @@
 .wodDescription > p:first-child {
     font-weight: bolder;
     font-size: 32px;
+}
+
+/* media queries */
+@media screen and (max-width: 1500px) {
+    .wodDescriptionContainer {
+        width: 80vw!important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .wodDescriptionContainer {
+        width: 90vw!important;
+    }
+}
+
+
+@media screen and (max-width: 775px) {
+    .wodDescription > p:first-child {
+        font-size: 28px;
+    }
+
+    .wodDescription > p {
+        font-size: 20px;
+    }
+
+    .videoLinkDiv > p {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    .wodDescriptionContainer {
+        width: 95vw!important;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .wodDescription > p:first-child {
+        font-size: 26px;
+    }
+
+    .wodDescription > p {
+        font-size: 18px;
+    }
+
+    .videoLinkDiv > p {
+        display: none;
+    }
+
+    .mockDiv {
+        width: 10%;
+    }
+    
+    .wodDescription {
+        width: 80%;
+    }
+    
+    .videoLinkDiv {
+        width: 10%;
+    }
+
 }

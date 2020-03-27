@@ -24,7 +24,8 @@ const WodResults = ({ userId, wod }) => {
                             : `${result.result} ${scoreObj[wod.score_type]}`}
                     </td>
                     <td>
-                        {`${moment(result.updated_at).fromNow()}${isEdited(result) ? ` - edited` : ""}`}
+                        {`${moment(result.updated_at).fromNow()}`}
+                        {isEdited(result) ? <span id="isEdited"> - edited</span> : ""}
                     </td>
                 </tr>
             )
