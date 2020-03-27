@@ -59,16 +59,15 @@
 /* media queries */
 @media screen and (max-width: 1500px) {
     .wodDescriptionContainer {
-        width: 80vw!important;
+        width: 80vw !important;
     }
 }
 
 @media screen and (max-width: 1200px) {
     .wodDescriptionContainer {
-        width: 90vw!important;
+        width: 90vw !important;
     }
 }
-
 
 @media screen and (max-width: 775px) {
     .wodDescription > p:first-child {
@@ -82,12 +81,11 @@
     .videoLinkDiv > p {
         font-size: 20px;
     }
-
 }
 
 @media screen and (max-width: 650px) {
     .wodDescriptionContainer {
-        width: 95vw!important;
+        width: 95vw !important;
     }
 }
 
@@ -109,11 +107,11 @@
     .mockDiv {
         width: 10%;
     }
-    
+
     .wodDescription {
         width: 80%;
     }
-    
+
     .videoLinkDiv {
         width: 10%;
     }

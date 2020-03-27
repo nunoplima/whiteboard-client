@@ -10,6 +10,8 @@ import Board from "./components/Board/Board";
 import Leaderboard from "./components/Leaderboard/Leaderboard";
 import VideoModal from "./components/VideoModal/VideoModal";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
+import Loading from "./components/Loading/Loading";
+import Error404 from "./components/Error404/Error404";
 import { TOMORROW, YESTERDAY, ADD } from "./constants/constants";
 import dotenv from "dotenv";
 dotenv.config();
@@ -23,6 +25,7 @@ class App extends React.Component {
         currentIndex: 0,
         socket: {},
         isModalVisible: false,
+        isKeyboardVisible: false,
         isLoading: true,
     };
 
@@ -108,7 +111,7 @@ class App extends React.Component {
     handleModalVisibility = bool => this.setState({ isModalVisible: bool });
     
     render() {
-        const { leaderboard, user, wods, currentIndex, isModalVisible, isLoading } = this.state;
+        const { leaderboard, user, wods, currentIndex, isModalVisible, isKeyboardVisible, isLoading } = this.state;
 
         return (
             <div className="App">
@@ -116,7 +119,7 @@ class App extends React.Component {
                 <Navbar user={user} onLogout={this.handleLogout} />
                
                 {isLoading ? (
-                        <h1>Loading...</h1>
+                        <Loading />
                     ) : (
                         <Switch> 
 
@@ -132,7 +135,8 @@ class App extends React.Component {
                                     currentIndex={currentIndex} 
                                     onDateChange={this.handleDateChange}
                                     onResultSubmit={this.handleResultSubmit} 
-                                    setModalVisibility={this.handleModalVisibility} />
+                                    setModalVisibility={this.handleModalVisibility}
+                                    isKeyboardVisible={isKeyboardVisible} />
                                 } />
                             
                             <Route exact 
@@ -141,12 +145,14 @@ class App extends React.Component {
                                 />
 
                             <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+
+                            <Route component={Error404} />
                         
                         </Switch>
                     )
                 }
 
-                {/* <Footer /> */}
+                <Footer />
 
                 {isModalVisible && (
                     <VideoModal

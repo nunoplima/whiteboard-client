@@ -1,0 +1,16 @@
+.errorContainer {
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+}
+
+.errorContainer h1 {
+    font-size: 60px;
+}
+
+#goBackLink:hover {
+    text-decoration: none!important;
+}

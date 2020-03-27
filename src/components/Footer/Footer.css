@@ -1,8 +1,9 @@
 .footerContainer {
-    /* bottom: 0; */
-    /* position: absolute; */
+    bottom: 0;
+    position: fixed;
     text-align: center;
     width: 100%;
+    z-index: 2;
 }
 
 .footerContainer p {
@@ -37,6 +38,12 @@
 
 @media screen and (max-width: 475px) {
     .footerContainer p {
-        font-size: 16px;
+        margin: 0;
     }
+
+    .footerContainer p {
+        font-size: 14px;
+    }
+
+
 }
