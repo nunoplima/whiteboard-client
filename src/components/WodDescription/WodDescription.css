@@ -91,6 +91,12 @@
     }
 }
 
+@media screen and (max-width: 510px) {
+    .videoLinkDiv > p {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 460px) {
     .wodDescription > p:first-child {
         font-size: 26px;
@@ -98,10 +104,6 @@
 
     .wodDescription > p {
         font-size: 18px;
-    }
-
-    .videoLinkDiv > p {
-        display: none;
     }
 
     .mockDiv {
@@ -115,5 +117,4 @@
     .videoLinkDiv {
         width: 10%;
     }
-
 }

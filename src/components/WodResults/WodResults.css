@@ -22,6 +22,10 @@
     padding: 10px;
 }
 
+.scoreType {
+    padding-left: 18px;
+}
+
 .font-awesome-icons-div {
     display: flex;
     flex-direction: column;

@@ -45,7 +45,7 @@
     }
 
     .leaderboardTitle {
-        font-size: 38px;
+        font-size: 38px!important;
     }
 
     .crownIcn {
@@ -87,6 +87,10 @@
         padding: 0 10px;
     }
 
+    .leaderboardTitle {
+        font-size: 34px!important;
+    }
+
     td {
         padding: 3px;
     }
@@ -112,7 +116,7 @@
 
 
     #leaderboardScore {
-        width: 30px;    
+        padding: 6px 2px;
     }
 
     .leaderboardWods {

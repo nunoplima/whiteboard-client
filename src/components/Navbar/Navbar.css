@@ -1,6 +1,6 @@
 .navbarContainer {
     width: 70%;
-    height: 10%;   
+    height: auto;   
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -9,13 +9,14 @@
 }
 
 .logo {
-    width: 250px;
+    width: 220px;
     margin-left: -40px;
     cursor: pointer;
 }
 
 .navbarLinks {
     padding: 0;
+    margin: 0;
     display: flex;
     justify-content: space-between;
     font-size: 24px;
@@ -65,8 +66,9 @@
 }
 
 @media screen and (max-width: 975px) {
-    .logo {
-        width: 200px;
+    .navbarContainer {
+        margin-top: 0;
+        margin-bottom: 10px;
     }
 
     .navbarLinks > li {
@@ -77,6 +79,12 @@
     .logo {
         width: 150px;
         margin-left: -30px;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .navbarContainer {
+        margin-bottom: 15px;
     }
 }
 
@@ -100,6 +108,10 @@
 @media screen and (max-width: 530px) {
     .logo {
         width: 135px;
+    }
+
+    .navbarContainer {
+        margin-bottom: 10px;
     }
 }
 
