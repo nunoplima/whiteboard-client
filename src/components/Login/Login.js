@@ -29,7 +29,7 @@ const Login = ({ onResponseFacebook }) => {
                 fields="name"
                 callback={onResponseFacebook}
                 cssClass="loginBtn loginBtn-facebook"
-                d
+                isMobile={false}
             />
         </div>
     );
