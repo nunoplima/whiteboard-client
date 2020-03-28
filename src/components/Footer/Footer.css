@@ -1,9 +1,10 @@
 .footerContainer {
-    bottom: 0;
-    position: fixed;
     text-align: center;
     width: 100%;
-    z-index: 2;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .footerContainer p {
