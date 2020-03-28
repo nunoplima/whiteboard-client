@@ -29,6 +29,7 @@ const Login = ({ onResponseFacebook }) => {
                 fields="name"
                 callback={onResponseFacebook}
                 cssClass="loginBtn loginBtn-facebook"
+                redirectUri="https://box-whiteboard.herokuapp.com/"
             />
         </div>
     );
