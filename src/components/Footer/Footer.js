@@ -6,7 +6,7 @@ import "./Footer.css";
 
 const Footer = () => {
     return (
-        <div className="footerContainer font-awesome-icons-div">
+        <div className="footerContainer">
             <p> Made with 
                 <span>
                     <FontAwesomeIcon icon={faHeart} className="heartIcn"/>
