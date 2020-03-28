@@ -16,13 +16,22 @@ const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit, setModa
         const today = moment().format("YYYY-MM-DD");
         const wodDay = moment(wod.scheduled_date).format("YYYY-MM-DD");
         const isLast = currentIndex === 0;
-        if ((today === wodDay || isLast) && scoreType !== "other") {
+
+        if (scoreType !== "other") {
             return (
                 <ResultForm userId={user.id} results={wod.results} wodId={wod.id} onResultSubmit={onResultSubmit} /> 
             ); 
-        } else if (today === wodDay || isLast) {
+        } else {
             return <DoneForm userId={user.id} results={wod.results} wodId={wod.id} onResultSubmit={onResultSubmit}/>
         }
+
+        // if ((today === wodDay || isLast) && scoreType !== "other") {
+        //     return (
+        //         <ResultForm userId={user.id} results={wod.results} wodId={wod.id} onResultSubmit={onResultSubmit} /> 
+        //     ); 
+        // } else if (today === wodDay || isLast) {
+        //     return <DoneForm userId={user.id} results={wod.results} wodId={wod.id} onResultSubmit={onResultSubmit}/>
+        // }
     };
 
     const wod = wods[currentIndex];
