@@ -38,7 +38,7 @@ const ResultForm = ({ userId, results, wodId, onResultSubmit }) => {
     return (
         <form onSubmit={handleOnSubmit}>
             <input className="result"
-                autoFocus
+                autoFocus={window.innerWidth < 600 ? false : true}
                 onFocus={handleFocus} 
                 onBlur={handleBlur} 
                 onChange={handleOnChange} 
