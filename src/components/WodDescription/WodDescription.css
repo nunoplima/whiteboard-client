@@ -97,7 +97,7 @@
 
 @media screen and (max-width: 460px) {
     .wodDescription > p:first-child {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .wodDescription > p {
@@ -114,5 +114,9 @@
 
     .videoLinkDiv {
         width: 10%;
+    }
+
+    .wodDescription > p {
+        margin: 0;
     }
 }
