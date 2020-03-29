@@ -35,8 +35,8 @@ class App extends React.Component {
             if (storedToken) {
                 // add event listeneres to socket (if a new result has been submitted or edited)
                 const socket = io(process.env.REACT_APP_API_URL);
-                socket.on("add to results", payload => this.updateResultInState(payload));
-                socket.on("edit results", payload => this.updateResultInState(payload));
+                socket.on("add to results", payload => this.updateResultsAndLeaderboardInState(payload));
+                socket.on("edit results", payload => this.updateResultsAndLeaderboardInState(payload));
                 // get leaderboard, user, token and workouts
                 const [{ leaderboard }, { user, token }, { wods }] = await Promise.all([getLeaderboard(), getUser(storedToken), getWodsAndResults(storedToken)]);
                 if (wods.length) {
@@ -48,7 +48,7 @@ class App extends React.Component {
         });
     }
 
-    updateResultInState = ({ wodId, results}) => {
+    updateResultsAndLeaderboardInState = ({ wodId, results, leaderboard }) => {
         this.setState((prevState) => {
             const updatedWods = prevState.wods.map(wod => {
                 if (wod.id === wodId) {
@@ -58,7 +58,7 @@ class App extends React.Component {
                 return wod;
             });
 
-            return { ...prevState, wods: updatedWods };
+            return { ...prevState, leaderboard, wods: updatedWods, isLoading: false };
         });
     };
 
@@ -108,10 +108,10 @@ class App extends React.Component {
         })
     };
 
-    handleResultSubmit = async (wodId, result, method) => {
+    handleResultSubmit = (wodId, result, method) => {
         const { user, socket } = this.state;
         const event = method === ADD ? "add result" : "edit result";
-        socket.emit(event, { result, wod_id: wodId, user_id: user.id });
+        this.setState({ isLoading: true }, () => socket.emit(event, { result, wod_id: wodId, user_id: user.id }));
     };
 
     handleModalVisibility = bool => this.setState({ isModalVisible: bool });
