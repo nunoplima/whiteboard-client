@@ -72,8 +72,8 @@ class App extends React.Component {
                 const { wods } = await getWodsAndResults(token);
                 // add event listeneres to socket (if a new result is submitted or edited)
                 const socket = io(process.env.REACT_APP_API_URL);
-                socket.on("add to results", payload => this.updateResultInState(payload));
-                socket.on("edit results", payload => this.updateResultInState(payload));
+                socket.on("add to results", payload => this.updateResultsAndLeaderboardInState(payload));
+                socket.on("edit results", payload => this.updateResultsAndLeaderboardInState(payload));
                 if (wods.length) {
                     return this.setState({ user, token, wods, socket, isLoading: false }, 
                         () => this.props.history.push("/"));
