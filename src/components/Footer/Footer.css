@@ -8,7 +8,7 @@
 }
 
 .footerContainer p {
-    margin: 0 0 10px 0;
+    margin: 0;
     font-size: 20px;
 }
 
@@ -31,7 +31,7 @@
 }
 
 /* media queries */
-@media screen and (max-width: 775px) {
+@media screen and (max-width: 775px) { 
     .footerContainer p {
         font-size: 18px;
     }
@@ -45,6 +45,4 @@
     .footerContainer p {
         font-size: 14px;
     }
-
-
 }
