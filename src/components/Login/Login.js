@@ -30,6 +30,7 @@ const Login = ({ onResponseFacebook }) => {
                 callback={onResponseFacebook}
                 cssClass="loginBtn loginBtn-facebook"
                 isMobile={false}
+                // disableMobileRedirect={true}
             />
         </div>
     );

@@ -6,6 +6,14 @@ import "./Leaderboard.css";
 const Leaderboard = ({ userId, leaderboard }) => {
     const [sortOrder, setSortOrder] = useState("desc");   
 
+    const renderUsername = (name) => {
+        const nameArr = name.split(" ");
+        if (nameArr.length > 1 && window.innerWidth <= 395 && name.length >= 12) {
+            return `${nameArr[0]} ${nameArr[1].charAt(0)}.`;
+        }
+        return name;
+    }
+
     const renderLeaderboard = () => (
         leaderboard.sort((a, b) => sortOrder === "asc" ? a[1].points - b[1].points : b[1].points - a[1].points)
             .map(el => (
@@ -13,10 +21,10 @@ const Leaderboard = ({ userId, leaderboard }) => {
                     <td>{el[1].rank}</td>
                     <td>{el[1].rank === 1 ? (
                         <div>
-                            {el[0]}
+                            {renderUsername(el[0])}
                             <FontAwesomeIcon className="crownIcn" icon={faCrown} />
                         </div> 
-                        ) : el[0]}
+                        ) : renderUsername(el[0])}
                     </td>
                     <td>{el[1].points}</td>
                     <td>{el[1][1] || "-"}</td>
