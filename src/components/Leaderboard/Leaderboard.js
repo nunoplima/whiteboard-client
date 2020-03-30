@@ -9,7 +9,7 @@ const Leaderboard = ({ userId, leaderboard }) => {
     const renderUsername = (name) => {
         const nameArr = name.split(" ");
         if (nameArr.length > 1 && window.innerWidth <= 395 && name.length >= 12) {
-            return `${nameArr[0]} ${nameArr[1].charAt(0)}.`;
+            return `${nameArr[0]} ${nameArr[nameArr.length - 1].charAt(0)}.`;
         }
         return name;
     }

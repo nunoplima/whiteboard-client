@@ -11,13 +11,21 @@ const WodResults = ({ userId, wod }) => {
         result.created_at !== result.updated_at
     );
 
+    const renderUsername = (name) => {
+        const nameArr = name.split(" ");
+        if (nameArr.length > 1 && window.innerWidth <= 370 && name.length >= 15) {
+            return `${nameArr[0]} ${nameArr[nameArr.length - 1].charAt(0)}.`;
+        }
+        return name;
+    }
+
     const renderWodResults = () => {
         const { results } = wod;
         return results.sort((a, b) => sortOrder === "asc" ? a.result - b.result : b.result - a.result)
             .map((result, idx) => (
                 <tr key={idx} id="row" className={userId === result.user_id ? "userResult" : ""}>
                     <td>{result.rank}</td>
-                    <td>{result.username}</td>
+                    <td>{renderUsername(result.username)}</td>
                     <td>
                         {wod.score_type === "other"
                             ? `${result.result ? "Yes" : "Not yet"}`
