@@ -124,6 +124,7 @@ td {
 
     .tableContainer {
         margin-top: .6rem;
+        min-height: 350px;
     }
 
     th {
@@ -133,4 +134,12 @@ td {
     td {
         padding: 4px !important;
     }
+}
+
+@media screen and (max-height: 460px) and (min-width: 560px) {
+    .tableContainer {
+        margin-top: .6rem;
+        min-height: 400px;
+    }
+
 }
