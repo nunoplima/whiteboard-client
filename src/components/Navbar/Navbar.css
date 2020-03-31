@@ -7,12 +7,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: .5rem auto;
 }
 
 .logo {
-    width: 220px;
-    margin-left: -40px;
+    /* width: 220px;
+    margin-left: -40px; */
     cursor: pointer;
+    width: 240px;
+    margin-left: -30px;
 }
 
 .navbarLinks {
@@ -73,15 +76,18 @@
     }
 
     .logo {
-        width: 180px;
-        margin-left: -30px;
+        /* width: 180px;
+        margin-left: -30px; */
+        width: 220px;
+        margin-left: -10px;
     }
 }
 
 @media screen and (max-width: 650px) {
     .logo {
-        width: 150px;
-        margin-left: -20px;
+        /* width: 150px;
+        margin-left: -20px; */
+        width: 200px;
     }
 
     .navbarLinks {
@@ -96,7 +102,8 @@
 
 @media screen and (max-width: 530px) {
     .logo {
-        width: 135px;
+        /* width: 135px; */
+        width: 180px;
     }
 }
 
