@@ -15,7 +15,8 @@
     margin-left: -40px; */
     cursor: pointer;
     width: 240px;
-    margin-left: -30px;
+    margin-left: -10px;
+    margin-top: -10px;
 }
 
 .navbarLinks {
@@ -79,7 +80,6 @@
         /* width: 180px;
         margin-left: -30px; */
         width: 220px;
-        margin-left: -10px;
     }
 }
 
@@ -102,12 +102,22 @@
 
 @media screen and (max-width: 530px) {
     .logo {
-        /* width: 135px; */
+        width: 175px;
         width: 180px;
     }
 }
 
 @media screen and (max-width: 460px) {
+    .navbarContainer {
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    .logo {
+        width: 140px;
+        margin-left: -3px;
+    }
+
     .navbarLinks > li {
         padding: 7px;
         font-size: 18px;
