@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/images/logo-white.png";
+import Logo from "../../assets/images/logo.png";
 import "./Navbar.css";
 
 const Navbar = ({ user, onLogout, history }) => {
