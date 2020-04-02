@@ -165,7 +165,7 @@ const PrivacyPolicy = () => {
                     <hr className="lineBreak"/>
                     <p>If you have any questions about this Privacy Policy, You can contact us:</p>
                     <ul>
-                        <li>By email: process.env.dev@gmail.com</li>
+                        <li>By email: hello@boxdin.pt</li>
                     </ul>
                 </div>
             </div>
