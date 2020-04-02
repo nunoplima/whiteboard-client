@@ -17,6 +17,16 @@
     color: #4c69ba;
 }
 
+.socialIcn {
+    font-size: 21px;
+    margin-left: 5px;
+    color: #4c69ba;
+}
+
+.socialIcn:hover {
+    color: #5b7bd5;
+}
+
 .hashtags {
     margin: 0 5px;
 }
@@ -35,6 +45,10 @@
     .footerContainer p {
         font-size: 18px;
     }
+
+    .socialIcn {
+        font-size: 19px;
+    }
 }
 
 @media screen and (max-width: 475px) {
@@ -44,5 +58,9 @@
 
     .footerContainer p {
         font-size: 14px;
+    }
+
+    .socialIcn {
+        font-size: 16px;
     }
 }
