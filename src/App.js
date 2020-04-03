@@ -120,7 +120,7 @@ class App extends React.Component {
         const { leaderboard, user, wods, currentIndex, isModalVisible, isKeyboardVisible, isLoading } = this.state;
 
         return (
-            <div className="App">
+            <div className="App fadeIn">
                 
                 <Navbar user={user} onLogout={this.handleLogout} />
                
