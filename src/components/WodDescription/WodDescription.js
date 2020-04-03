@@ -12,7 +12,17 @@ const WodDescription = ({ wod, setModalVisibility }) => {
     return (
         <div className="wodDescriptionContainer">
 
-            <div className="mockDiv"></div>
+            {
+                wod.logo_url ? (
+                    <div className="leftDiv boxDiv">
+                        <a href={wod.box_url} target="_blank" rel="noopener noreferrer">
+                            <img className="boxLogo" src={wod.logo_url} alt="Day's wod sponsor logo" />
+                        </a>
+                    </div>
+                    ) : (
+                        <div className="leftDiv"></div>
+                    )
+            }
 
             <div className="wodDescription">{renderWod()}</div>
 
