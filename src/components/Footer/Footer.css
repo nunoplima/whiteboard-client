@@ -17,10 +17,22 @@
     color: #4c69ba;
 }
 
+.socialIcnContainer {
+    margin-left: 7px;
+}
+
 .socialIcn {
-    font-size: 21px;
-    margin-left: 5px;
     color: #4c69ba;
+}
+
+#facebookIcn {
+    font-size: 20px;
+    vertical-align: -0.21em;
+}
+
+#instaIcn {
+    font-size: 21px;
+    vertical-align: -0.24em;
 }
 
 .socialIcn:hover {
@@ -46,7 +58,11 @@
         font-size: 18px;
     }
 
-    .socialIcn {
+    #facebookIcn {
+        font-size: 18px;
+    }
+    
+    #instaIcn {
         font-size: 19px;
     }
 }
@@ -60,7 +76,11 @@
         font-size: 14px;
     }
 
-    .socialIcn {
+    #facebookIcn {
+        font-size: 15px;
+    }
+    
+    #instaIcn {
         font-size: 16px;
     }
 }

@@ -19,11 +19,11 @@ const Footer = () => {
                 </span>
                 |
                 <span>
-                    <a href="https://www.instagram.com/boxdin.pt" target="_blank">
-                        <FontAwesomeIcon icon={faInstagram} className="socialIcn"/>
+                    <a href="https://www.instagram.com/boxdin.pt" target="_blank" className="socialIcnContainer">
+                        <FontAwesomeIcon icon={faInstagram} id="instaIcn" className="socialIcn" />
                     </a>
-                    <a href="https://www.facebook.com/BoxdIn-115214513462537" target="_blank">
-                        <FontAwesomeIcon icon={faFacebook} className="socialIcn"/>
+                    <a href="https://www.facebook.com/BoxdIn-115214513462537" target="_blank" className="socialIcnContainer">
+                        <FontAwesomeIcon icon={faFacebook} id="facebookIcn" className="socialIcn"/>
                     </a>
                 </span>
             </p>
