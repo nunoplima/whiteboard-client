@@ -16,22 +16,22 @@ const Leaderboard = ({ userId, leaderboard }) => {
     }
 
     const renderLeaderboard = () => (
-        leaderboard.sort((a, b) => sortOrder === "asc" ? a[1].points - b[1].points : b[1].points - a[1].points)
+        leaderboard.sort((a, b) => sortOrder === "asc" ? a.points - b.points : b.points - a.points)
             .map(el => (
-                <tr key={el[0]} className={userId === el[1].user_id ? "userResult" : ""}>
-                    <td>{el[1].rank}</td>
-                    <td>{el[1].rank === 1 ? (
+                <tr key={el.id} className={userId === el.id ? "userResult" : ""}>
+                    <td>{el.rank}</td>
+                    <td>{el.rank === 1 ? (
                         <div>
-                            {renderUsername(el[0])}
+                            {renderUsername(el.username)}
                             <FontAwesomeIcon className="crownIcn" icon={faCrown} />
                         </div> 
-                        ) : renderUsername(el[0])}
+                        ) : renderUsername(el.username)}
                     </td>
-                    <td>{el[1].points}</td>
-                    <td>{el[1][1] || "-"}</td>
-                    <td>{el[1][2] || "-"}</td>
-                    <td>{el[1][3] || "-"}</td>
-                    <td className="leaderboardWods">{el[1].completed}</td>
+                    <td>{el.points}</td>
+                    <td>{el[1] || "-"}</td>
+                    <td>{el[2] || "-"}</td>
+                    <td>{el[3] || "-"}</td>
+                    <td className="leaderboardWods">{el.completed}</td>
                 </tr>
             ))       
     );
