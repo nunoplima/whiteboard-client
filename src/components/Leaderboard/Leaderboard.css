@@ -12,8 +12,8 @@
 
 #leaderboardTable {
     max-width: 70%;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin: 25px 0;
+    padding: 0;
 }
 
 .crownIcn {
@@ -44,6 +44,7 @@
 @media screen and (max-width: 650px) {
     #leaderboardTable {
         max-width: 95vw !important;
+        margin: 20px 0;
     }
 
     .crownIcn {
@@ -56,14 +57,11 @@
     #leaderboardTable {
         max-width: 100vw !important;
         padding: 0 10px;
+        margin: 15px 0;
     }
 
     .leaderboardTitle {
         font-size: 40px !important;
-    }
-
-    td {
-        padding: 4px;
     }
 
     .crownIcn {
@@ -81,6 +79,12 @@
     }
 }
 
+@media screen and (max-width: 485px) {
+    .leaderboardWods {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 460px) {
     #leaderboardTable {
         max-width: 100vw !important;
@@ -88,17 +92,8 @@
     }
 
     .leaderboardTitle {
-        margin-top: .7rem;
+        margin-top: 0.7rem;
         font-size: 34px !important;
-    }
-
-    td {
-        padding: 3px;
-    }
-
-    th {
-        padding-left: 3px;
-        padding-right: 3px;
     }
 
     .crownIcn {
@@ -118,8 +113,14 @@
     #leaderboardScore {
         padding: 6px 2px;
     }
+}
 
-    .leaderboardWods {
-        display: none;
+@media screen and (max-width: 321px) {
+    #leaderboardTable {
+        padding: 0 5px;
+    }
+
+    .crownIcn {
+        font-size: 14px;
     }
 }
