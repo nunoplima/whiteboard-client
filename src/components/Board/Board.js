@@ -1,5 +1,5 @@
 import React from "react";
-import requireAuth from "../../hoc/requiresAuth";
+import requiresAuth from "../../hoc/requiresAuth";
 import moment from "moment";
 import WodDate from "../WodDate/WodDate";
 import WodDescription from "../WodDescription/WodDescription";
@@ -60,4 +60,4 @@ const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit, setModa
     )
 };
 
-export default requireAuth(Board);
+export default requiresAuth(Board);

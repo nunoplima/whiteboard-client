@@ -2,17 +2,17 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 
 
-const requiresAuth = (ComposedComponent) => (
+const requiresNoAuth = (ComposedComponent) => (
     // withRouter so the component can access history object
     withRouter((props) => {       
-        if (!Object.keys(props.user).length) {
-            props.history.push("/login");
+        if (Object.keys(props.user).length) {
+            props.history.push("/board");
             // something has to be returned, otherwise ComposedComponent will be returned albeit the history push
-            return null
+            return null;
+        } else {
+            return <ComposedComponent {...props} />
         }
-
-        return <ComposedComponent {...props} />
     })
 );
 
-export default requiresAuth;
+export default requiresNoAuth;

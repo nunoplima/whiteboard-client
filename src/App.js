@@ -131,7 +131,8 @@ class App extends React.Component {
 
                             <Redirect exact from="/" to="/board" />
 
-                            <Route exact path="/login" render={() => <Login onResponseFacebook={this.handleResponseFacebook}/> } />
+                            <Route exact path="/login" 
+                                render={() => <Login user={user} onResponseFacebook={this.handleResponseFacebook}/> } />
                             
                             <Route exact 
                                 path="/board" 
