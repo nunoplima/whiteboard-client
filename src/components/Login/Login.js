@@ -1,5 +1,6 @@
 import React from "react";
 import FacebookLogin from "react-facebook-login";
+import requiresNoAuth from "../../hoc/requiresNoAuth";
 import "./Login.css";
 import dotenv from "dotenv";
 dotenv.config();
@@ -36,4 +37,4 @@ const Login = ({ onResponseFacebook }) => {
     );
 };
 
-export default Login;
+export default requiresNoAuth(Login);
