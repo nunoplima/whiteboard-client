@@ -25,7 +25,7 @@ class App extends React.Component {
         currentIndex: 0,
         socket: {},
         isModalVisible: false,
-        error: "",        
+        isDescriptionVisible: true,        
         isLoading: true,
     };
 
@@ -116,8 +116,19 @@ class App extends React.Component {
 
     handleModalVisibility = bool => this.setState({ isModalVisible: bool });
     
+    handleDescriptionVisibility = bool => this.setState({ isDescriptionVisible: bool });
+
     render() {
-        const { leaderboard, user, wods, currentIndex, isModalVisible, isKeyboardVisible, isLoading } = this.state;
+        const { 
+            leaderboard, 
+            user, 
+            wods, 
+            currentIndex, 
+            isModalVisible, 
+            isKeyboardVisible, 
+            isDescriptionVisible, 
+            isLoading 
+        } = this.state;
 
         return (
             <div className="App fadeIn">
@@ -143,7 +154,9 @@ class App extends React.Component {
                                     onDateChange={this.handleDateChange}
                                     onResultSubmit={this.handleResultSubmit} 
                                     setModalVisibility={this.handleModalVisibility}
-                                    isKeyboardVisible={isKeyboardVisible} />
+                                    isKeyboardVisible={isKeyboardVisible} 
+                                    setDescriptionVisibility={this.handleDescriptionVisibility}
+                                    isDescriptionVisible={isDescriptionVisible} />
                                 } />
                             
                             <Route exact 

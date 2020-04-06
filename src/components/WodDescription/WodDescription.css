@@ -18,17 +18,41 @@
     cursor: pointer;
     margin: 10px 0;
     border: 1px solid #7b7b7b;
-    -webkit-box-shadow: 0px 8px 13px -4px rgba(0,0,0,0.68);
-    -moz-box-shadow: 0px 8px 13px -4px rgba(0,0,0,0.68);
-    box-shadow: 0px 8px 13px -4px rgba(0,0,0,0.68);
+    -webkit-box-shadow: 0px 8px 13px -4px rgba(0, 0, 0, 0.68);
+    -moz-box-shadow: 0px 8px 13px -4px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 8px 13px -4px rgba(0, 0, 0, 0.68);
 }
 
 .boxLogo:hover {
-    opacity: .8;
+    opacity: 0.8;
+}
+
+.wodDescriptionInnerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.slideBtn {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.slideBtn:hover {
+    color: #7b7b7b;
+}
+
+.slideBtnUp {
+    margin-top: 10px;
+}
+
+.hide {
+    display: none;
 }
 
 .wodDescription {
-    width: 50%;
     text-align: center;
     justify-content: flex-end;
 }
@@ -155,5 +179,13 @@
 
     .wodDescription > p {
         margin: 0;
+    }
+
+    .slideBtn {
+        font-size: 16px;
+    }
+
+    .slideBtnUp {
+        margin-top: 5px;
     }
 }

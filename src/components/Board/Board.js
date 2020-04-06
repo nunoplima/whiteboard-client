@@ -8,8 +8,17 @@ import ResultForm from "../ResultForm/ResultForm";
 import DoneForm from "../DoneForm/DoneForm";
 import "./Board.css";
 
-const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit, setModalVisibility }) => {
-    
+const Board = ({
+    user,
+    wods,
+    currentIndex,
+    onDateChange,
+    onResultSubmit,
+    setModalVisibility,
+    setDescriptionVisibility,
+    isDescriptionVisible,
+}) => {
+
     const renderButton = () => {
         const wod = wods[currentIndex];
         const scoreType = wod.score_type;
@@ -48,7 +57,11 @@ const Board = ({ user, wods, currentIndex, onDateChange, onResultSubmit, setModa
             
             <div className="tableContainer">
     
-                <WodDescription wod={wod} setModalVisibility={setModalVisibility} />
+                <WodDescription 
+                    wod={wod} 
+                    setModalVisibility={setModalVisibility} 
+                    setDescriptionVisibility={setDescriptionVisibility} 
+                    isDescriptionVisible={isDescriptionVisible} />
 
                 <WodResults userId={user.id} wod={wod} />
     
