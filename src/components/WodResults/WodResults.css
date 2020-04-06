@@ -43,7 +43,7 @@
     width: 40%;
 }
 
-#submitDate {
+.submitDate {
     width: 35%;
     text-align: end;
 }
@@ -100,5 +100,25 @@
 
     #sortOrder {
         margin-left: 5px;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .submitDate {
+        display: none;
+    }
+
+    #athlete {
+        width: 50%;
+    }
+    
+    #position {
+        width: 17%;
+    }
+    
+    #score {
+        width: 33%;
+        text-align: right;
     }
 }

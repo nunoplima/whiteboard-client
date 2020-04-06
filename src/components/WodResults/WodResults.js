@@ -31,7 +31,7 @@ const WodResults = ({ userId, wod }) => {
                             ? `${result.result ? "Yes" : "Not yet"}`
                             : `${result.result} ${scoreObj[wod.score_type]}`}
                     </td>
-                    <td>
+                    <td className="submitDate">
                         {`${moment(result.updated_at).fromNow()}`}
                         {isEdited(result) ? <span id="isEdited"> - edited</span> : ""}
                     </td>
@@ -71,7 +71,7 @@ const WodResults = ({ userId, wod }) => {
                                 </div>
                             )}
                         </th>
-                        <th scope="col" id="submitDate">Submitted</th>
+                        <th scope="col" className="submitDate">Submitted</th>
                     </tr>
                 </thead>
 
